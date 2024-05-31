@@ -20,6 +20,11 @@ const taskSchema = new Schema({
     status: {
         type: String,
         enum: ["Not Complete", "Completed", "In Progress"],
+    },
+    employee: {
+        type: Schema.Types.ObjectId,
+        ref: 'Employee',
+        required: true,
     }
 })
 
