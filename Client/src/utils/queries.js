@@ -8,7 +8,7 @@ export const QUERY_TASKS = gql`
     description
     deadline
     priority
-    status
+    isComplete
     employee {
       _id
   }

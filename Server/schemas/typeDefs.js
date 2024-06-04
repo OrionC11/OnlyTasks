@@ -13,7 +13,7 @@ const typeDefs = `
         title: String!
         description: String!
         type: String!
-        status: String!
+        isComplete: Boolean!
     }
 
     type Auth {
@@ -43,7 +43,7 @@ const typeDefs = `
             title: String!, 
             description: String!, 
             type: String!, 
-            status: String!
+            isComplete: Boolean!
         ): Task
         updateEmployee(
             _id: ID!, 
@@ -58,7 +58,7 @@ const typeDefs = `
             title: String, 
             description: String, 
             type: String, 
-            status: String
+            isComplete: Boolean
         ): Task
         deleteEmployee(
             _id: ID!
