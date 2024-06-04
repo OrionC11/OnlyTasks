@@ -18,7 +18,7 @@ const typeDefs = `
 
     type Auth {
         token: ID!
-        user: User
+        employee: Employee
     }
 
     type Query {

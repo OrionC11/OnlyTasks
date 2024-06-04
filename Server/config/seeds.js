@@ -45,6 +45,7 @@ db.once("open", async () => {
       deadline: "06/03/2024",
       priority: "High",
       status: "Not Complete",
+      employee: employees[0]._id,
     },
     {
       title: "Implement Keylogger",
@@ -52,6 +53,7 @@ db.once("open", async () => {
       deadline: "06/27/2024",
       priority: "Medium",
       status: "Not Complete",
+      employee: employees[1]._id,
     },
     {
       title: "Resolve Bugs",
@@ -59,6 +61,7 @@ db.once("open", async () => {
       deadline: "06/27/2069",
       priority: "Low",
       status: "Not Complete",
+      employee: employees[2]._id,
     },
     {
       title: "Team Meeting",
@@ -66,6 +69,7 @@ db.once("open", async () => {
       deadline: "06/27/2024",
       priority: "Medium",
       status: "Not Complete",
+      employee: employees[3]._id,
     },
   ]);
   console.log("Tasks Seeded");

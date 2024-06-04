@@ -17,9 +17,9 @@ const taskSchema = new Schema({
         type: String,
         enum: ["Low", "Medium", "High"],
     },
-    status: {
-        type: String,
-        enum: ["Not Complete", "Completed", "In Progress"],
+    isComplete: {
+        type: Boolean,
+        default: false,
     },
     employee: {
         type: Schema.Types.ObjectId,

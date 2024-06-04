@@ -4,7 +4,7 @@ export const LOGIN = gql`
   mutation login($email: String!, $password: String!) {
     login(email: $email, password: $password) {
       token
-      user {
+      employee {
         _id
       }
     }
@@ -34,13 +34,10 @@ mutation addTask(
   $title: String!, 
   $description: String!, 
   $type: String!, 
-  $status: String!) {
+  $isComplete: Boolean!) {
    addTask(
       title: $title, 
       description: $description, 
       type: $type, 
-      status: $status) {
-      token
-      task{
-        _id
-      }}`;
+      isComplete: $isComplete) 
+      }`;
