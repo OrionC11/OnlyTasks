@@ -8,10 +8,10 @@ const TaskForm = () => {
     
     const handleSubmit = (e) => {
         e.preventDefault()
-        createTask({
+        addTask({ //changed
         variables: {
-            taskName,
-            taskDescription
+            taskName, //change
+            taskDescription //change
         }
         })
     }
