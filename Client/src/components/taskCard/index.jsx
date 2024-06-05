@@ -1,5 +1,6 @@
-import {useState} from react
-import {useMutation} from @apollo/client
+import React from "react";
+import {useState} from "react"
+import {useMutation} from "@apollo/client"
 
 const TaskCard = () => {
     return (
