@@ -1,10 +1,10 @@
-import CalendarPage from "../components/calendar";
+import FullCalendar from "../components/calendar";
 import React from "react";
 
 const Calendar = () => {
   return (
-    <div className="container">
-      <CalendarPage />
+    <div className="calendar">
+      <FullCalendar />
     </div>
   );
 };
