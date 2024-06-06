@@ -1,5 +1,6 @@
 import Box from "@mui/material/Box";
 import TextField from "@mui/material/TextField";
+import FormControl from "@mui/material/FormControl";
 import MenuItem from "@mui/material/MenuItem";
 import FormControlLabel from "@mui/material/FormControlLabel";
 import Button from "@mui/material/Button";
@@ -58,49 +59,62 @@ const Signup = () => {
             sx={{
               "& .MuiTextField-root": { m: 1, width: "25ch" },
             }}
+            multiline
+            maxRows={4}
             noValidate
             autoComplete="off"
             onSubmit={handleFormSubmit}
           >
-            <TextField
-              id="outlined-multiline-required"
-              label="Username"
-              multiline
-              value={formState.username}
-              onChange={handleChange}
-            />
-            <TextField
-              id="outlined-multiline-required"
-              label="First Name"
-              multiline
-              value={formState.firstName}
-              onChange={handleChange}
-            />
-            <TextField
-              id="outlined-multiline-required"
-              label="Last Name"
-              multiline
-              value={formState.lastName}
-              onChange={handleChange}
-            />
-            <TextField
-              id="outlined-multiline-required"
-              label="Email"
-              multiline
-              value={formState.email}
-              onChange={handleChange}
-            />
-            <TextField
-              id="outlined-multiline-password-input"
-              label="Password"
-              multiline
-              type="password"
-              value={formState.password}
-            />
-
-            <Button variant="contained" type="submit">
-              Submit
-            </Button>
+            <div>
+              <TextField
+                id="outlined-multiline-required"
+                label="Username"
+                name="username"
+                multiline
+                value={formState.username}
+                onChange={handleChange}
+              />
+              <TextField
+                id="outlined-password-input"
+                label="Password"
+                name="password"
+                type="password"
+                value={formState.password}
+                onChange={handleChange}
+              />
+            </div>
+            <div>
+              <TextField
+                id="outlined-multiline-required"
+                label="First Name"
+                multiline
+                name="firstName"
+                value={formState.firstName}
+                onChange={handleChange}
+              />
+              <TextField
+                id="outlined-multiline-required"
+                label="Last Name"
+                multiline
+                name="lastName"
+                value={formState.lastName}
+                onChange={handleChange}
+              />
+            </div>
+            <div></div>
+            <div>
+              <TextField
+                id="outlined-multiline-required"
+                label="Email"
+                multiline
+                name="email"
+                value={formState.email}
+                onChange={handleChange}
+              />
+              <Button variant="contained" type="submit">
+                Submit
+              </Button>
+            </div>
           </Box>
         )}
 
