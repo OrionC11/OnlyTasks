@@ -12,11 +12,16 @@ const resolvers = {
     tasks: async () => {
       return await Task.find();
     },
+    employeeTasks: async (parent, { id }) => {
+      return await Task.find({ employee: id });
+    },
   },
 
   Mutation: {
-    addEmployee: async (parent, args) => {
-      return await Employee.create(args);
+    addEmployee: async (parent,{username, firstName, lastName, email, password}) => {
+      const employee = await Employee.create({username, firstName, lastName, email, password})
+      const token = signToken(employee);
+      return {token, employee}
     },
     updateEmployee: async (parent, args, context) => {
       if (context.employee) {
@@ -32,23 +37,24 @@ const resolvers = {
       }
     },
     addTask: async (parent, args) => {
+      console.log(args);
       return await Task.create(args);
     },
     updateTask: async (parent, args, context) => {
-        if (context.task) {
-          return await Task.findByIdAndUpdate(context.task.id, args, {
-            new: true,
-          });
-        }
-        throw AuthenticationError;
+      if (context.task) {
+        return await Task.findByIdAndUpdate(context.task.id, args, {
+          new: true,
+        });
+      }
+      throw AuthenticationError;
     },
     deleteTask: async (parent, args, context) => {
-        if (context.task) {
-          return await Task.findByIdAndDelete(context.task.id);
-        }
-        throw AuthenticationError;
+      if (context.task) {
+        return await Task.findByIdAndDelete(context.task.id);
+      }
+      throw AuthenticationError;
     },
-    
+
     login: async (parent, { username, password }) => {
       const employee = await Employee.findOne({ username });
       if (!employee) {

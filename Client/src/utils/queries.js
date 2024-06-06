@@ -1,27 +1,42 @@
-import {gql} from '@apollo/client';
+import { gql } from "@apollo/client";
 
 export const QUERY_TASKS = gql`
-{
-  tasks {
-    _id
-    title
-    description
-    deadline
-    priority
-    isComplete
-    employee {
+  query Tasks {
+    tasks {
       _id
+      isComplete
+      title
+      description
+      deadline
+      priority
+      employee
+    }
   }
-}`
+`;
 
 export const QUERY_EMPLOYEES = gql`
-{
-  employees {
-    _id
-    username
-    firstName
-    lastName
-    email
-    password
+  query Employees {
+    employees {
+      _id
+      email
+      firstName
+      lastName
+      username
+    }
   }
-}` 
+`;
+
+export const QUERY_EMPLOYEETASKS = gql`
+  query EmployeeTasks($id: ID!) {
+    employeeTasks(id: $id) {
+      _id
+      title
+      description
+      deadline
+      priority
+      isComplete
+      employee
+    }
+  }
+`;
+

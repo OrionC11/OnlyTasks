@@ -12,8 +12,10 @@ const typeDefs = `
         _id: ID!
         title: String!
         description: String!
-        type: String!
+        deadline: String!
+        priority: String!
         isComplete: Boolean!
+        employee: ID!
     }
 
     type Auth {
@@ -25,6 +27,7 @@ const typeDefs = `
         employees: [Employee]
         employee(username: String!): Employee
         tasks: [Task]
+        employeeTasks(id: ID!): [Task]
     }
 
     type Mutation {
@@ -34,7 +37,7 @@ const typeDefs = `
             lastName: String!, 
             email: String!, 
             password: String!
-        ): Employee
+        ): Auth
         login(
             username: String!, 
             password: String!
@@ -42,8 +45,9 @@ const typeDefs = `
         addTask(
             title: String!, 
             description: String!, 
-            type: String!, 
-            isComplete: Boolean!
+            deadline: String!,
+            priority: String!, 
+            employee: ID!
         ): Task
         updateEmployee(
             _id: ID!, 
@@ -54,10 +58,7 @@ const typeDefs = `
             password: String
         ): Employee
         updateTask(
-            _id: ID!, 
-            title: String, 
-            description: String, 
-            type: String, 
+            _id: ID!
             isComplete: Boolean
         ): Task
         deleteEmployee(
