@@ -56,11 +56,14 @@ const resolvers = {
     },
 
     login: async (parent, { username, password }) => {
+      console.log(username)
       const employee = await Employee.findOne({ username });
       if (!employee) {
         throw new AuthenticationError("Incorrect credentials");
       }
+      console.log(employee)
       const correctPw = await employee.isCorrectPassword(password);
+      console.log(correctPw)
       if (!correctPw) {
         throw new AuthenticationError("Incorrect credentials");
       }
