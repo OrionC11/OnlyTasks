@@ -99,10 +99,9 @@ const TaskForm = () => {
       </div>
       <div>
         <TextField
-          id="outlined-select-currency"
+          id="outlined-select"
           select
           label="Select"
-          defaultValue="EUR"
           value={employeeID}
           onChange={(e) => setEmployeeID(e.target.value)}
           helperText="Please Select Employee Assigned"
