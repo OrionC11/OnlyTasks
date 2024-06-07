@@ -27,7 +27,7 @@ export const QUERY_EMPLOYEES = gql`
 `;
 
 export const QUERY_EMPLOYEETASKS = gql`
-  query EmployeeTasks($employee: ID!) {
+  query employeeTasks($employee: ID!) {
     employeeTasks(employee: $employee) {
       _id
       title
@@ -39,4 +39,3 @@ export const QUERY_EMPLOYEETASKS = gql`
     }
   }
 `;
-
