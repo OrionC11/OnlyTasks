@@ -8,7 +8,8 @@ import Calender from "./pages/calender.jsx";
 import TaskCreator from "./pages/taskCreator.jsx";
 import Signup from "./pages/signup.jsx";
 import Login from "./pages/login.jsx";
-// import CompletedTasks from "./pages/completedTasks.jsx";
+import CompletedTasks from "./pages/completedTasks.jsx";
+
 // import NotFound from "./pages/NotFound";
 const router = createBrowserRouter([
   {
@@ -36,10 +37,10 @@ const router = createBrowserRouter([
         path: "/login",
         element: <Login />,
       },
-      // {
-      //   path: "/completed",
-      //   element: <CompletedTasks />,
-      // },
+      {
+        path: "/completed",
+        element: <CompletedTasks />,
+      },
     ],
   },
 ]);
