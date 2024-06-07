@@ -41,7 +41,7 @@ employeeSchema.pre('save', async function(next){
 })
 
 employeeSchema.methods.isCorrectPassword= async function (password){
-  return bcrypt.compare(password, this.password);
+  return await bcrypt.compare(password, this.password);
 }
 
 const Employee= model("Employee", employeeSchema);
