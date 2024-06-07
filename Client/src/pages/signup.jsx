@@ -6,6 +6,7 @@ import FormControlLabel from "@mui/material/FormControlLabel";
 import Button from "@mui/material/Button";
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import Header from "../components/Header";
 
 import { useMutation } from "@apollo/client";
 import { ADD_EMPLOYEE } from "../utils/mutations";
@@ -48,6 +49,7 @@ const Signup = () => {
 
   return (
     <main>
+      <Header></Header>
       <div>
         {data ? (
           <p>
