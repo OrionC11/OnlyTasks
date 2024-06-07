@@ -13,15 +13,24 @@ const resolvers = {
       return await Task.find();
     },
     employeeTasks: async (parent, { id }) => {
-      return await Task.find({ employee: id });
+      return await Task.find({ employee: id});
     },
   },
 
   Mutation: {
-    addEmployee: async (parent,{username, firstName, lastName, email, password}) => {
-      const employee = await Employee.create({username, firstName, lastName, email, password})
+    addEmployee: async (
+      parent,
+      { username, firstName, lastName, email, password }
+    ) => {
+      const employee = await Employee.create({
+        username,
+        firstName,
+        lastName,
+        email,
+        password,
+      });
       const token = signToken(employee);
-      return {token, employee}
+      return { token, employee };
     },
     updateEmployee: async (parent, args, context) => {
       if (context.employee) {

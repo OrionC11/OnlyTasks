@@ -27,8 +27,8 @@ export const QUERY_EMPLOYEES = gql`
 `;
 
 export const QUERY_EMPLOYEETASKS = gql`
-  query EmployeeTasks($id: ID!) {
-    employeeTasks(id: $id) {
+  query EmployeeTasks($employee: ID!) {
+    employeeTasks(employee: $employee) {
       _id
       title
       description

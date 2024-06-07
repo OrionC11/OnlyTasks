@@ -27,7 +27,7 @@ const typeDefs = `
         employees: [Employee]
         employee(username: String!): Employee
         tasks: [Task]
-        employeeTasks(id: ID!): [Task]
+        employeeTasks(employee: ID!): [Task]
     }
 
     type Mutation {
@@ -39,7 +39,7 @@ const typeDefs = `
             password: String!
         ): Auth
         login(
-            username: String!, 
+            email: String!, 
             password: String!
         ): Auth
         addTask(
