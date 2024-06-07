@@ -23,18 +23,20 @@ export default function TaskCard({
       <Card variant="outlined">
         <CardContent>
           <Typography sx={{ fontSize: 14 }} color="text.secondary" gutterBottom>
-            {taskDL}
+            Deadline: {taskDL}
           </Typography>
           <Typography variant="h5" component="div">
-            {taskTitle}
+            Task: <b>{taskTitle}</b>
           </Typography>
-          <Typography sx={{ mb: 1.5 }} color="text.secondary">
-            Is Task Completed: {taskComp}
+          <Typography variant="body2">
+            Description of task:
+            <br />
+            {taskDesc}
           </Typography>
-          <Typography variant="body2">{taskDesc}</Typography>
         </CardContent>
         <CardActions>
           <RadioGroup
+            row
             aria-labelledby="demo-row-radio-buttons-group-label"
             defaultValue="low"
             name="row-radio-buttons-group"
