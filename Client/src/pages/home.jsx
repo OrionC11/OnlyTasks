@@ -1,13 +1,12 @@
-import Header from "../components/Header";
+
 import React from "react";
 import TaskList from "../components/taskList";
 
 const HeaderTest = () => {
   return (
-    <div className="container">
-      <Header />
+    <main className="container">
       <TaskList />
-    </div>
+    </main>
   );
 };
 

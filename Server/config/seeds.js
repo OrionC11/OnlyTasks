@@ -44,7 +44,7 @@ db.once("open", async () => {
       description: "Destroy all evidence",
       deadline: "06/03/2024",
       priority: "High",
-      status: "Not Complete",
+      isComplete: true,
       employee: employees[0]._id,
     },
     {
@@ -52,7 +52,7 @@ db.once("open", async () => {
       description: "Track all employee card information via a keylogger",
       deadline: "06/27/2024",
       priority: "Medium",
-      status: "Not Complete",
+      isComplete: true,
       employee: employees[1]._id,
     },
     {
@@ -60,7 +60,7 @@ db.once("open", async () => {
       description: "this is a joke task bugs are fun",
       deadline: "06/27/2069",
       priority: "Low",
-      status: "Not Complete",
+      isComplete: true,
       employee: employees[2]._id,
     },
     {
@@ -68,7 +68,7 @@ db.once("open", async () => {
       description: "Meet with your assigned team",
       deadline: "06/27/2024",
       priority: "Medium",
-      status: "Not Complete",
+      isComplete: true,
       employee: employees[3]._id,
     },
   ]);

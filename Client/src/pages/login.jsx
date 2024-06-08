@@ -44,7 +44,6 @@ const Login = () => {
 
   return (
     <main>
-      <Header></Header>
       <Box
         component="form"
         sx={{

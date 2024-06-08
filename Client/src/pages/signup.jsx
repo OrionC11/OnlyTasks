@@ -49,7 +49,6 @@ const Signup = () => {
 
   return (
     <main>
-      <Header></Header>
       <div>
         {data ? (
           <p>
@@ -64,6 +63,10 @@ const Signup = () => {
             multiline
             maxRows={4}
             noValidate
+            maxWidth="1000"
+            display="flex"
+            flexDirection="column"
+            alignItems="center"
             autoComplete="off"
             onSubmit={handleFormSubmit}
           >

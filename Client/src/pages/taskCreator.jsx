@@ -5,7 +5,6 @@ import React from "react";
 const TaskCreator = () => {
   return (
     <div className="container">
-      <Header />
       <TaskForm />
     </div>
   );
