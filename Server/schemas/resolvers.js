@@ -12,16 +12,26 @@ const resolvers = {
     tasks: async () => {
       return await Task.find();
     },
-    employeeTasks: async (parent, { id }) => {
-      return await Task.find({ employee: id });
+    employeeTasks: async (parent, { employee }) => {
+      console.log(employee)
+      return await Task.find({ employee: employee });
     },
   },
 
   Mutation: {
-    addEmployee: async (parent,{username, firstName, lastName, email, password}) => {
-      const employee = await Employee.create({username, firstName, lastName, email, password})
+    addEmployee: async (
+      parent,
+      { username, firstName, lastName, email, password }
+    ) => {
+      const employee = await Employee.create({
+        username,
+        firstName,
+        lastName,
+        email,
+        password,
+      });
       const token = signToken(employee);
-      return {token, employee}
+      return { token, employee };
     },
     updateEmployee: async (parent, args, context) => {
       if (context.employee) {
@@ -56,14 +66,14 @@ const resolvers = {
     },
 
     login: async (parent, { username, password }) => {
-      console.log(username)
+      console.log(username);
       const employee = await Employee.findOne({ username });
       if (!employee) {
         throw new AuthenticationError("Incorrect credentials");
       }
-      console.log(employee)
+      console.log(employee);
       const correctPw = await employee.isCorrectPassword(password);
-      console.log(correctPw)
+      console.log(correctPw);
       if (!correctPw) {
         throw new AuthenticationError("Incorrect credentials");
       }
