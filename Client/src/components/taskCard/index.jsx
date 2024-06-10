@@ -11,6 +11,7 @@ import Typography from "@mui/material/Typography";
 import Radio from "@mui/material/Radio";
 import RadioGroup from "@mui/material/RadioGroup";
 import FormControlLabel from "@mui/material/FormControlLabel";
+import FormLabel from "@mui/material/FormLabel";
 
 export default function TaskCard({
   taskID,
@@ -50,12 +51,13 @@ export default function TaskCard({
         <CardActions>
           <RadioGroup
             row
-            aria-labelledby="demo-row-radio-buttons-group-label"
+            aria-labelledby="row-radio-buttons-group-label"
             defaultValue="low"
             name="row-radio-buttons-group"
             value={taskPri}
             onChange={(e) => setPriority(e.target.value)}
           >
+            <FormLabel id="radio-buttons-group-label">Priority:</FormLabel>
             <FormControlLabel value="High" control={<Radio />} label="High" />
             <FormControlLabel
               value="Medium"
