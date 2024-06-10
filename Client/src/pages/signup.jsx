@@ -48,7 +48,6 @@ const Signup = () => {
   };
 
   return (
-    <main>
       <div>
         {data ? (
           <p>
@@ -127,7 +126,6 @@ const Signup = () => {
           <div className="my-3 p-3 bg-danger text-white">{error.message}</div>
         )}
       </div>
-    </main>
   );
 };
 

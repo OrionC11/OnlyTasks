@@ -1,4 +1,96 @@
+:root {
+    --color1: #0C1821;
+    --color2: #1B2A41;
+    --color3: #324A5F;
+    --color4: #CCC9DC;
+}
+
+html, body {
+    height: 100%;
+    margin: 0;
+    overflow: hidden; /* Prevent scrolling */
+  }
+
+body {
+    margin: 0;
+    align-content: center;
+}
+
 main {
+    display: inline-block;
+    width: 100%;
+}
+
+header {
+    background-color: #c5c5c5;
+    height: 15vh;
     display: flex;
+}
+
+.layout{
+    display: flex;
+    height: 100vh;
+}
+
+.navbar {
+    background-color: var(--color2);
+    width: 20%;
+}
+
+.container {
+    background-color: var(--color1);
+    flex: 1;
+    display: flex;
+    flex-direction: row;
+    padding: 0;
+    margin: 0;
+    overflow-x: auto; /* Horizontal overflow scroll */
+    white-space: nowrap; /* Prevent cards from wrapping */
+}
+
+.quarter {
+    width: 20%;
+    background-color: var(--color2);
+}
+
+.filler{
+    color: var(--color4);
+    flex: 1;
+    background-color: var(--color1);
+    display: flex;
+    padding-left: 2%;
     align-items: center;
+}
+
+ul {
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    width: 100%;
+    padding: 0%;
+    margin-right: 10%;
+}
+
+li {
+    list-style-type: none;
+    padding: 10%;
+}
+
+li:hover {
+    background-color: var(--color3);
+}
+
+a {
+    text-decoration: none;
+    color: var(--color4);
+}
+
+a:hover {
+    background-color: var(--color3);
+}
+
+img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }

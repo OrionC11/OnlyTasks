@@ -10,7 +10,6 @@
     "install": "cd server && npm i && cd ../client && npm i",
     "seed": "cd server && npm run seed",
     "build": "cd client && npm run build"
-
   },
   "repository": {
     "type": "git",
@@ -24,8 +23,8 @@
   "homepage": "https://github.com/OrionC11/OnlyTasks#readme",
   "devDependencies": {
     "concurrently": "^5.3.0"
+  },
+  "dependencies": {
+    "react-router-dom": "^6.23.1"
   }
-
-  
 }
-
