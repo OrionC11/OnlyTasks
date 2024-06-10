@@ -19,7 +19,9 @@ const TaskList = () => {
     data?.employeeTasks.filter((task) => task.isComplete === false) || [];
   return (
     <div>
-      <h1>{profile.authenticatedPerson.username}'s Tasks</h1>
+      <h1 style={{ color: "cyan", marginLeft: "35px" }}>
+        {profile.authenticatedPerson.username}'s Tasks:
+      </h1>
       {loading ? (
         <div>Loading...</div>
       ) : (

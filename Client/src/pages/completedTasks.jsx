@@ -12,7 +12,7 @@ const CompletedTasks = () => {
 
   return (
     <div>
-      <h2>Completed Tasks</h2>
+      <h2 style={{ color: "cyan", marginLeft: "35px" }}>Completed Tasks</h2>
       {completedArray.map((task) => (
         <TaskCard
           key={task._id}
