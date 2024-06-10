@@ -59,7 +59,7 @@ const typeDefs = `
         ): Employee
         updateTask(
             _id: ID!
-            isComplete: Boolean
+            isComplete: Boolean!
         ): Task
         deleteEmployee(
             _id: ID!

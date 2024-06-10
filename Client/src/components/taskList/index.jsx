@@ -15,7 +15,8 @@ const TaskList = () => {
     },
   });
 
-  console.log(data);
+  const notCompleteArray =
+    data?.employeeTasks.filter((task) => task.isComplete === false) || [];
   return (
     <div>
       <h1>{profile.authenticatedPerson.username}'s Tasks</h1>
@@ -23,10 +24,11 @@ const TaskList = () => {
         <div>Loading...</div>
       ) : (
         <ul>
-          {data.employeeTasks.map((task) => (
+          {notCompleteArray.map((task) => (
             // <li key={task._id}>{task.description}</li>
             <TaskCard
-              key={task.id}
+              key={task._id}
+              taskID={task._id}
               taskTitle={task.title}
               taskDesc={task.description}
               taskDL={task.deadline}

@@ -31,6 +31,20 @@ export const ADD_EMPLOYEE = gql`
   }
 `;
 
+export const UPDATE_TASK = gql`
+  mutation UpdateTask($_id: ID!, $isComplete: Boolean!) {
+    updateTask(_id: $_id, isComplete: $isComplete) {
+      _id
+      title
+      description
+      deadline
+      priority
+      isComplete
+      employee
+    }
+  }
+`;
+
 export const ADD_TASK = gql`
   mutation addTask(
     $title: String!
