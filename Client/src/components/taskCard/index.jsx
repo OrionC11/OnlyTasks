@@ -1,6 +1,8 @@
 import React from "react";
 import { useState } from "react";
 import { useMutation, useQuery } from "@apollo/client";
+import { UPDATE_TASK } from "../../utils/mutations";
+import Button from "@mui/material/Button";
 import Box from "@mui/material/Box";
 import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
@@ -11,6 +13,7 @@ import RadioGroup from "@mui/material/RadioGroup";
 import FormControlLabel from "@mui/material/FormControlLabel";
 
 export default function TaskCard({
+  taskID,
   taskTitle,
   taskDesc,
   taskDL,
@@ -18,6 +21,16 @@ export default function TaskCard({
   taskComp,
 }) {
   const [prio, setPriority] = useState("");
+  const [updateTask, { error }] = useMutation(UPDATE_TASK);
+  const handleUpdateTask = () => {
+    updateTask({
+      variables: {
+        _id: taskID,
+        isComplete: true,
+      },
+    });
+  };
+
   return (
     <Box sx={{ maxWidth: 1000 }}>
       <Card variant="outlined">
@@ -51,6 +64,9 @@ export default function TaskCard({
             />
             <FormControlLabel value="Low" control={<Radio />} label="Low" />
           </RadioGroup>
+          <Button variant="contained" onClick={handleUpdateTask}>
+            Complete
+          </Button>
         </CardActions>
       </Card>
       <br />
