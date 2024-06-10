@@ -64,9 +64,11 @@ export default function TaskCard({
             />
             <FormControlLabel value="Low" control={<Radio />} label="Low" />
           </RadioGroup>
-          <Button variant="contained" onClick={handleUpdateTask}>
-            Complete
-          </Button>
+          {!taskComp && (
+            <Button variant="contained" onClick={handleUpdateTask}>
+              Complete
+            </Button>
+          )}
         </CardActions>
       </Card>
       <br />
