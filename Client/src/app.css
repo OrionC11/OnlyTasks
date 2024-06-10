@@ -110,3 +110,8 @@ img {
     justify-content: center;
     justify-items: center;
 }
+
+.bugfix {
+    width: 50%;
+    height: 50%;
+}
