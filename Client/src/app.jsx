@@ -1,8 +1,15 @@
 import "./app.css";
 import React from "react";
-import { Outlet } from "react-router-dom";
 import { ApolloClient, ApolloProvider, InMemoryCache } from "@apollo/client";
-import Header from "./components/Header";
+import { Routes, Route } from 'react-router-dom'; // Import Routes and Route
+import Layout from "./components/layout";
+import Home from'./pages/home';
+import Calender from'./pages/calender';
+import Signup from './pages/signup';
+import Login from './pages/login';
+import NotFound from './pages/NotFound';
+import TaskCreator from './pages/taskCreator';
+import CompletedTasks from "./pages/completedTasks";
 
 const client = new ApolloClient({
   uri: "/graphql",
@@ -12,10 +19,18 @@ const client = new ApolloClient({
 function App() {
   return (
     <ApolloProvider client={client}>
-      <div className="flex-column justify-center align-center min-100-vh bg-primary">
-        <Header />
-        <Outlet />
-      </div>
+      <Layout>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/calender" element={<Calender />} />
+          <Route path="/completeTask" element={<CompletedTasks />} />
+          <Route path="/signup" element={<Signup />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/taskCreator" element={<TaskCreator />} />
+          <Route path="/completed" element={<CompletedTasks />} />
+          <Route path="*" element={<NotFound />} />
+        </Routes>
+      </Layout>
     </ApolloProvider>
   );
 }

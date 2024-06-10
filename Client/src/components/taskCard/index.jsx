@@ -25,11 +25,11 @@ export default function TaskCard({
           <Typography sx={{ fontSize: 14 }} color="text.secondary" gutterBottom>
             Deadline: {taskDL}
           </Typography>
-          <Typography variant="h5" component="div">
+          <Typography variant="h5" component="li">
             Task: <b>{taskTitle}</b>
           </Typography>
           <Typography variant="body2">
-            Description of task:
+            Task Outline:
             <br />
             {taskDesc}
           </Typography>

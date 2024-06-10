@@ -1,13 +1,17 @@
 import { Link } from "react-router-dom";
 import React from "react";
+import '../../app.css';
 
 const Header = () => {
   return (
-    <header>
-      <div className="titleSection">
-        <h1>OnlyTasks</h1>
-      </div>
-      <nav>
+    <main>
+      <header>
+        <div className="titleSection">
+          <img src="../src/assets/Only_tasks.pn" alt ="Logo" class="logo"></img>
+        </div>
+      </header>
+
+      <nav class="navBar">
         <ul>
           <li>
             <Link to="/">Dashboard</Link>
@@ -29,7 +33,7 @@ const Header = () => {
           </li>
         </ul>
       </nav>
-    </header>
+      </main>
   );
 };
 

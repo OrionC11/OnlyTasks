@@ -1,8 +1,8 @@
-
 import React from "react";
 import TaskList from "../components/taskList";
+import '../app.css';
 
-const HeaderTest = () => {
+const Home = () => {
   return (
     <main className="container">
       <TaskList />
@@ -10,4 +10,4 @@ const HeaderTest = () => {
   );
 };
 
-export default HeaderTest;
+export default Home;
