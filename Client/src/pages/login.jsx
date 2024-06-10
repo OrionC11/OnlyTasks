@@ -46,15 +46,31 @@ const Login = () => {
     <main>
       <Box
         component="form"
+        width={450}
         sx={{
-          "& .MuiTextField-root": { m: 1, width: "25ch" },
+          "& .MuiTextField-root": { m: 3 },
         }}
         multiline
+        display="flex"
+        flexDirection="column"
+        backgroundColor="#ededed"
+        borderRadius={5}
         maxRows={3}
         noValidate
         autoComplete="off"
+        style={{ marginLeft: "35px" }}
         onSubmit={handleFormSubmit}
       >
+        <h2
+          style={{
+            color: "black",
+            marginBottom: "5px",
+            padding: "0px",
+            textAlign: "center",
+          }}
+        >
+          Login
+        </h2>
         <div>
           <TextField
             id="outlined-multiline-required"
@@ -62,6 +78,7 @@ const Login = () => {
             multiline
             maxRows={3}
             name="email"
+            style={{ width: "350px", marginLeft: "50px", marginBottom: "10px" }}
             value={formState.email}
             onChange={handleChange}
           />
@@ -72,13 +89,29 @@ const Login = () => {
             label="Password"
             multiline
             maxRows={3}
+            style={{
+              width: "350px",
+              marginLeft: "50px",
+              marginBottom: "15px",
+              marginTop: "10px",
+            }}
             name="password"
             value={formState.password}
             onChange={handleChange}
           />
         </div>
         <div>
-          <Button variant="contained" color="primary" type="submit">
+          <Button
+            variant="contained"
+            color="primary"
+            type="submit"
+            style={{
+              width: "150px",
+              marginLeft: "150px",
+              marginTop: "15px",
+              marginBottom: "25px",
+            }}
+          >
             Login
           </Button>
         </div>

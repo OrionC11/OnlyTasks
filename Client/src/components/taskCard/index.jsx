@@ -33,16 +33,37 @@ export default function TaskCard({
   };
 
   return (
-    <Box sx={{ maxWidth: 1000 }}>
-      <Card variant="outlined">
+    <Box sx={{ maxWidth: 1000, marginTop: 5 }}>
+      <Card
+        variant="outlined"
+        backgroundColor="#ededed"
+        style={{
+          width: "600px",
+          marginLeft: "35px",
+          marginBottom: "10px",
+          borderRadius: "10px",
+        }}
+      >
         <CardContent>
           <Typography sx={{ fontSize: 14 }} color="text.secondary" gutterBottom>
             Deadline: {taskDL}
           </Typography>
-          <Typography variant="h5" component="li">
+          <Typography
+            variant="h5"
+            component="li"
+            style={{
+              textAlign: "center",
+              marginBottom: "5px",
+              padding: "40px",
+              paddingBottom: "20px",
+            }}
+          >
             Task: <b>{taskTitle}</b>
           </Typography>
-          <Typography variant="body2">
+          <Typography
+            variant="body2"
+            style={{ textAlign: "center", paddingBottom: "20px" }}
+          >
             Task Outline:
             <br />
             {taskDesc}
@@ -55,9 +76,24 @@ export default function TaskCard({
             defaultValue="low"
             name="row-radio-buttons-group"
             value={taskPri}
+            style={{
+              textAlign: "center",
+              marginLeft: "15px",
+              padding: "3px",
+              marginBottom: "25px",
+            }}
             onChange={(e) => setPriority(e.target.value)}
           >
-            <FormLabel id="radio-buttons-group-label">Priority:</FormLabel>
+            <FormLabel
+              id="radio-buttons-group-label"
+              style={{
+                marginLeft: "10px",
+                marginRight: "18px",
+                marginTop: "8px",
+              }}
+            >
+              Priority:
+            </FormLabel>
             <FormControlLabel value="High" control={<Radio />} label="High" />
             <FormControlLabel
               value="Medium"
@@ -67,7 +103,15 @@ export default function TaskCard({
             <FormControlLabel value="Low" control={<Radio />} label="Low" />
           </RadioGroup>
           {!taskComp && (
-            <Button variant="contained" onClick={handleUpdateTask}>
+            <Button
+              variant="contained"
+              onClick={handleUpdateTask}
+              style={{
+                width: "125px",
+                marginLeft: "45px",
+                marginBottom: "15px",
+              }}
+            >
               Complete
             </Button>
           )}

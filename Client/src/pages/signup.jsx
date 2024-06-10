@@ -48,84 +48,106 @@ const Signup = () => {
   };
 
   return (
-      <div>
-        {data ? (
-          <p>
-            Success! You may now head <Link to="/">back to the homepage.</Link>
-          </p>
-        ) : (
-          <Box
-            component="form"
-            sx={{
-              "& .MuiTextField-root": { m: 1, width: "25ch" },
+    <div>
+      {data ? (
+        <p>
+          Success! You may now head <Link to="/">back to the homepage.</Link>
+        </p>
+      ) : (
+        <Box
+          component="form"
+          sx={{
+            "& .MuiTextField-root": { m: 3, width: "25ch" },
+          }}
+          multiline
+          maxRows={4}
+          noValidate
+          maxWidth="1000"
+          display="flex"
+          borderRadius={5}
+          flexDirection="column"
+          alignItems="center"
+          backgroundColor="#ededed"
+          autoComplete="off"
+          style={{ marginLeft: "35px" }}
+          onSubmit={handleFormSubmit}
+        >
+          <h2
+            style={{
+              color: "black",
+              marginBottom: "5px",
+              padding: "0px",
+              textAlign: "center",
             }}
-            multiline
-            maxRows={4}
-            noValidate
-            maxWidth="1000"
-            display="flex"
-            flexDirection="column"
-            alignItems="center"
-            autoComplete="off"
-            onSubmit={handleFormSubmit}
           >
-            <div>
-              <TextField
-                id="outlined-multiline-required"
-                label="Username"
-                name="username"
-                multiline
-                value={formState.username}
-                onChange={handleChange}
-              />
-              <TextField
-                id="outlined-password-input"
-                label="Password"
-                name="password"
-                type="password"
-                value={formState.password}
-                onChange={handleChange}
-              />
-            </div>
-            <div>
-              <TextField
-                id="outlined-multiline-required"
-                label="First Name"
-                multiline
-                name="firstName"
-                value={formState.firstName}
-                onChange={handleChange}
-              />
-              <TextField
-                id="outlined-multiline-required"
-                label="Last Name"
-                multiline
-                name="lastName"
-                value={formState.lastName}
-                onChange={handleChange}
-              />
-            </div>
-            <div></div>
-            <div>
-              <TextField
-                id="outlined-multiline-required"
-                label="Email"
-                multiline
-                name="email"
-                value={formState.email}
-                onChange={handleChange}
-              />
-              <Button variant="contained" type="submit">
-                Submit
-              </Button>
-            </div>
-          </Box>
-        )}
+            Sign Up!
+          </h2>
+          <div>
+            <TextField
+              id="outlined-multiline-required"
+              label="Username"
+              name="username"
+              multiline
+              style={{ marginRight: "10px", marginLeft: "20px" }}
+              value={formState.username}
+              onChange={handleChange}
+            />
+            <TextField
+              id="outlined-password-input"
+              label="Password"
+              name="password"
+              type="password"
+              style={{ marginRight: "20px" }}
+              value={formState.password}
+              onChange={handleChange}
+            />
+          </div>
+          <div>
+            <TextField
+              id="outlined-multiline-required"
+              label="First Name"
+              multiline
+              name="firstName"
+              style={{ marginRight: "10px" }}
+              value={formState.firstName}
+              onChange={handleChange}
+            />
+            <TextField
+              id="outlined-multiline-required"
+              label="Last Name"
+              multiline
+              name="lastName"
+              style={{ marginRight: "20px" }}
+              value={formState.lastName}
+              onChange={handleChange}
+            />
+          </div>
+          <div></div>
+          <div>
+            <TextField
+              id="outlined-multiline-required"
+              label="Email"
+              multiline
+              name="email"
+              style={{ width: "400px", marginLeft: "20px" }}
+              value={formState.email}
+              onChange={handleChange}
+            />
+            <Button
+              style={{ marginTop: "32px", marginRight: "25px" }}
+              variant="contained"
+              type="submit"
+            >
+              Submit
+            </Button>
+          </div>
+        </Box>
+      )}
 
-        {error && (
-          <div className="my-3 p-3 bg-danger text-white">{error.message}</div>
-        )}
-      </div>
+      {error && (
+        <div className="my-3 p-3 bg-danger text-white">{error.message}</div>
+      )}
+    </div>
   );
 };
 

@@ -44,18 +44,34 @@ const TaskForm = () => {
   return (
     <Box
       component="form"
+      height={700}
+      width={350}
       sx={{
-        "& .MuiTextField-root": { m: 1, width: "25ch" },
+        "& .MuiTextField-root": { m: 5 },
       }}
+      style={{ marginLeft: "35px" }}
+      borderRadius={5}
+      backgroundColor="#ededed"
       noValidate
       autoComplete="off"
       onSubmit={handleSubmit}
     >
+      <h2
+        style={{
+          color: "black",
+          marginBottom: "5px",
+          padding: "0px",
+          marginLeft: "95px",
+        }}
+      >
+        Create Task
+      </h2>
       <div>
         <TextField
           id="outlined-multiline-required"
           label="Task Name"
           multiline
+          style={{ width: "250px", marginBottom: "20px", marginTop: "25px" }}
           maxRows={4}
           value={taskName}
           onChange={(e) => setTaskName(e.target.value)}
@@ -66,6 +82,12 @@ const TaskForm = () => {
           id="outlined-multiline-static"
           label="Task Description"
           multiline
+          style={{
+            width: "250px",
+            height: "100px",
+            marginTop: "20px",
+            marginBottom: "20px",
+          }}
           rows={4}
           value={taskDescription}
           onChange={(e) => setTaskDescription(e.target.value)}
@@ -77,6 +99,7 @@ const TaskForm = () => {
           label="Deadline"
           type="date"
           value={deadline}
+          style={{ width: "250px", marginTop: "40px", marginBottom: "20px" }}
           onChange={(e) => setDeadline(e.target.value)}
           InputLabelProps={{
             shrink: true,
@@ -85,10 +108,16 @@ const TaskForm = () => {
       </div>
       <div>
         <RadioGroup
+          row
           aria-labelledby="demo-row-radio-buttons-group-label"
           defaultValue="low"
           name="row-radio-buttons-group"
           value={taskPriority}
+          style={{
+            marginLeft: "35px",
+            marginTop: "10px",
+            marginBottom: "20px",
+          }}
           onChange={(e) => setPriority(e.target.value)}
         >
           <FormControlLabel value="High" control={<Radio />} label="High" />
@@ -102,6 +131,7 @@ const TaskForm = () => {
           select
           label="Select"
           value={employeeID}
+          style={{ width: "250px", marginTop: "10px" }}
           onChange={(e) => setEmployeeID(e.target.value)}
           helperText="Please Select Employee Assigned"
         >
@@ -112,9 +142,15 @@ const TaskForm = () => {
           ))}
         </TextField>
       </div>
-      <Button variant="contained" type="submit">
-        Submit
-      </Button>
+      <div>
+        <Button
+          variant="contained"
+          type="submit"
+          style={{ marginLeft: "125px" }}
+        >
+          Submit
+        </Button>
+      </div>
     </Box>
   );
 };
