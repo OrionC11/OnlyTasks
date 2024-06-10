@@ -16,7 +16,7 @@ const Login = () => {
     email: "",
     password: "",
   });
-  const [login, { error, data }] = useMutation(LOGIN_USER);
+  const [loginMut] = useMutation(LOGIN_USER);
   const handleChange = (event) => {
     const { name, value } = event.target;
     setFormState({
@@ -28,9 +28,10 @@ const Login = () => {
     event.preventDefault();
     console.log(formState);
     try {
-      const { data } = await login({
+      const { data } = await loginMut({
         variables: { ...formState },
       });
+      console.log(data);
       Auth.login(data.login.token);
     } catch (e) {
       console.error(e);
