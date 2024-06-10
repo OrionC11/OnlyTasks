@@ -27,6 +27,7 @@ const TaskList = () => {
           {notCompleteArray.map((task) => (
             // <li key={task._id}>{task.description}</li>
             <TaskCard
+              key={task._id}
               taskID={task._id}
               taskTitle={task.title}
               taskDesc={task.description}
