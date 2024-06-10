@@ -13,7 +13,7 @@ const resolvers = {
       return await Task.find();
     },
     employeeTasks: async (parent, { employee }) => {
-      console.log(employee)
+      console.log(employee);
       return await Task.find({ employee: employee });
     },
   },
@@ -50,13 +50,17 @@ const resolvers = {
       console.log(args);
       return await Task.create(args);
     },
-    updateTask: async (parent, args, context) => {
-      if (context.task) {
-        return await Task.findByIdAndUpdate(context.task.id, args, {
-          new: true,
-        });
+    updateTask: async (_, { _id, isComplete }) => {
+      try {
+        const task = await Task.findByIdAndUpdate(
+          _id,
+          { isComplete },
+          { new: true }
+        );
+        return task;
+      } catch (error) {
+        throw new Error("Failed to update task");
       }
-      throw AuthenticationError;
     },
     deleteTask: async (parent, args, context) => {
       if (context.task) {

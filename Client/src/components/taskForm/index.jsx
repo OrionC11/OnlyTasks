@@ -76,7 +76,6 @@ const TaskForm = () => {
           id="date"
           label="Deadline"
           type="date"
-          defaultValue="2021-09-01"
           value={deadline}
           onChange={(e) => setDeadline(e.target.value)}
           InputLabelProps={{
