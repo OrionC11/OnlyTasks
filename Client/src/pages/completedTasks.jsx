@@ -6,7 +6,7 @@ import TaskCard from "../components/taskCard";
 
 const CompletedTasks = () => {
   const { loading, data } = useQuery(QUERY_TASKS);
-  const completedArray = data?.tasks.filter((i) => i.isComplete === false) || [];
+  const completedArray = data?.tasks.filter((i) => i.isComplete === true) || [];
   // console.log(completedArray);
   // console.log(data);
 
