@@ -44,12 +44,12 @@ const TaskForm = () => {
   return (
     <Box
       component="form"
-      height={700}
+      height={575}
       width={350}
       sx={{
         "& .MuiTextField-root": { m: 5 },
       }}
-      style={{ marginLeft: "35px" }}
+      style={{ marginLeft: "35px"}}
       borderRadius={5}
       backgroundColor="#ededed"
       noValidate
@@ -71,7 +71,7 @@ const TaskForm = () => {
           id="outlined-multiline-required"
           label="Task Name"
           multiline
-          style={{ width: "250px", marginBottom: "20px", marginTop: "25px" }}
+          style={{ width: "250px", marginBottom: "5px", marginTop: "10px" }}
           maxRows={4}
           value={taskName}
           onChange={(e) => setTaskName(e.target.value)}
@@ -85,8 +85,8 @@ const TaskForm = () => {
           style={{
             width: "250px",
             height: "100px",
-            marginTop: "20px",
-            marginBottom: "20px",
+            marginTop: "10px",
+            marginBottom: "10px",
           }}
           rows={4}
           value={taskDescription}
@@ -99,7 +99,7 @@ const TaskForm = () => {
           label="Deadline"
           type="date"
           value={deadline}
-          style={{ width: "250px", marginTop: "40px", marginBottom: "20px" }}
+          style={{ width: "250px", marginTop: "30px", marginBottom: "10px" }}
           onChange={(e) => setDeadline(e.target.value)}
           InputLabelProps={{
             shrink: true,
@@ -115,8 +115,8 @@ const TaskForm = () => {
           value={taskPriority}
           style={{
             marginLeft: "35px",
-            marginTop: "10px",
-            marginBottom: "20px",
+            marginTop: "5px",
+            marginBottom: "10px",
           }}
           onChange={(e) => setPriority(e.target.value)}
         >

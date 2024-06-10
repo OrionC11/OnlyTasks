@@ -43,6 +43,7 @@ const Login = () => {
   };
 
   return (
+    <div>
     <main>
       <Box
         component="form"
@@ -117,6 +118,7 @@ const Login = () => {
         </div>
       </Box>
     </main>
+    </div>
   );
 };
 
