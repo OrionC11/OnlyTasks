@@ -6,17 +6,28 @@ import Auth from "../../utils/auth";
 import TaskCard from "../taskCard";
 
 const TaskList = () => {
-  const profile = Auth.getProfile();
-  console.log("profile:", profile);
-  console.log("profile ID:", profile.authenticatedPerson._id);
+  let profile = null;
+  try {
+    profile = Auth.getProfile();
+    console.log("profile:", profile);
+    console.log("profile ID:", profile.authenticatedPerson._id);
+  } catch (e) {
+    console.error("Error retrieving profile:", e);
+    return (
+      <div>
+        <h1>Error</h1>
+        <p>Invalid or expired authentication token. Please log in again.</p>
+      </div>
+    );
+  }
   const { loading, data } = useQuery(QUERY_EMPLOYEETASKS, {
     variables: {
       employee: profile.authenticatedPerson._id,
     },
   });
-
   const notCompleteArray =
     data?.employeeTasks.filter((task) => task.isComplete === false) || [];
+
   return (
     <div>
       <h1 style={{ color: "#00b2f1", marginLeft: "35px" }}>

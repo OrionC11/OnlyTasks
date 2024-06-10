@@ -1,14 +1,21 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import Button from "@mui/material/Button";
+import Auth from "../../utils/auth.js";
+
 export default function Layout({ children }) {
+  const logout = () => {
+    Auth.logout();
+    window.location.replace = "/login";
+  };
+  const checkUser = Auth.getToken();
   return (
     <main>
       <header>
         <div className="quarter">
-          <img src="/src/assets/Only_tasks.png" alt="logo" class="logo"/>
+          <img src="/src/assets/Only_tasks.png" alt="logo" class="logo" />
         </div>
-        <div className="filler">
-        </div>
+        <div className="filler"></div>
       </header>
       <div className="layout">
         <nav className="navBar">
@@ -31,11 +38,21 @@ export default function Layout({ children }) {
             <li>
               <Link to="/signup">Sign Up</Link>
             </li>
+            {checkUser && (
+              <li>
+                <Button
+                  variant="outlined"
+                  color="error"
+                  onClick={logout}
+                  style={{ width: "3vw", color: "red" }}
+                >
+                  Logout
+                </Button>
+              </li>
+            )}
           </ul>
         </nav>
-        <div className="container">
-        {children}
-        </div>
+        <div className="container">{children}</div>
       </div>
     </main>
   );
