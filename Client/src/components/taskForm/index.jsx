@@ -49,7 +49,7 @@ const TaskForm = () => {
       sx={{
         "& .MuiTextField-root": { m: 5 },
       }}
-      style={{ marginLeft: "35px"}}
+      style={{ marginLeft: "15vw" }}
       borderRadius={5}
       backgroundColor="#ededed"
       noValidate
