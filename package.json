@@ -26,13 +26,11 @@
     "url": "https://github.com/OrionC11/OnlyTasks/issues"
   },
   "homepage": "https://github.com/OrionC11/OnlyTasks#readme",
-  "devDependencies": {
-    "concurrently": "^5.3.0"
-  },
   "dependencies": {
     "mongodb": "^6.7.0",
     "node": "^20.11.1",
     "npm": "^10.8.1",
-    "react-router-dom": "^6.23.1"
+    "react-router-dom": "^6.23.1",
+    "concurrently": "^5.3.0"
   }
 }
