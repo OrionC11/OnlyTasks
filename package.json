@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "A task tracking application for use by large or small scale companies. Allows you to add and track employee tasks.",
   "main": "server/server.js",
-  "engine": {
+  "engines": {
     "node": "20.11.1"
   },
   "scripts": {
