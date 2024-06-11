@@ -6,7 +6,8 @@ export default defineConfig(({ command, mode }) => {
   return {
     plugins: [react()],
     build: {
-      outDir: "build",
+      outDir: "dist",
+      assetsDir: "assets",
     },
     server: {
       port: 3000,
