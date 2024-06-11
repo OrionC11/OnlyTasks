@@ -1,5 +1,8 @@
-const mongoose = require('mongoose');
+const mongoose = require("mongoose");
+require("dotenv").config();
 
-mongoose.connect(MONGODB_URI ||'mongodb://127.0.0.1:27017/OnlyTasks');
+mongoose.connect(
+  process.env.MONGODB_URI || "mongodb://127.0.0.1:27017/OnlyTasks"
+);
 
 module.exports = mongoose.connection;
