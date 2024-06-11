@@ -5,6 +5,9 @@ export default defineConfig(({ command, mode }) => {
   const isProduction = mode === "production";
   return {
     plugins: [react()],
+    build: {
+      outDir: "build",
+    },
     server: {
       port: 3000,
       open: true,
