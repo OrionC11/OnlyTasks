@@ -9,7 +9,7 @@
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node Server/server.js",
+    "start": "concurrently \"cd Server && npm run watch\" \"cd ./Client && npm run dev\"",
     "develop": "concurrently \"cd Server && npm run watch\" \"cd ./Client && npm run dev\"",
     "install": "cd Server && npm i && cd ../Client && npm i",
     "seed": "cd Server && npm run seed",
