@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "A task tracking application for use by large or small scale companies. Allows you to add and track employee tasks.",
   "main": "server/server.js",
-  "engines": {
+  "engine": {
     "node": "20.11.1"
   },
   "scripts": {
@@ -30,6 +30,7 @@
   },
   "dependencies": {
     "mongodb": "^6.7.0",
+    "node": "^20.11.1",
     "npm": "^10.8.1",
     "react-router-dom": "^6.23.1"
   }
