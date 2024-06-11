@@ -8,11 +8,11 @@
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node ./server/server.js --ignore client",
-    "develop": "concurrently \"cd ./server && npm run watch\" \"cd ./client && npm run dev\"",
-    "install": "cd ./server && npm i && cd ../client && npm i",
-    "seed": "cd ./server && npm run seed",
-    "build": "cd ./client && npm run build",
+    "start": "concurrently \"cd server && npm run watch\" \"cd ./client && npm run dev\"",
+    "develop": "concurrently \"cd server && npm run watch\" \"cd ./client && npm run dev\"",
+    "install": "cd server && npm i && cd ../client && npm i",
+    "seed": "cd server && npm run seed",
+    "build": "cd client && npm run build",
     "heroku-postbuild": "npm run build"
   },
   "repository": {
@@ -30,6 +30,7 @@
   },
   "dependencies": {
     "mongodb": "^6.7.0",
+    "npm": "^10.8.1",
     "react-router-dom": "^6.23.1"
   }
 }
