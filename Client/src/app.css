@@ -41,7 +41,7 @@ header {
 
 .navbar {
     background-color: var(--color2);
-    width: 10vw;
+    width: 11vw;
 }
 
 .container {
@@ -58,7 +58,7 @@ header {
 }
 
 .quarter {
-    width: 10vw;
+    width: 11vw;
     background-color: var(--color2);
 }
 
