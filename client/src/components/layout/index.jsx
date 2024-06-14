@@ -2,18 +2,19 @@ import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import Button from "@mui/material/Button";
 import Auth from "../../utils/auth.js";
+import Logo from "../../assets/Only_tasks.png";
 
 export default function Layout({ children }) {
   const logout = () => {
     Auth.logout();
-    window.location.replace = "/login";
+    window.location.replace("/login");
   };
   const checkUser = Auth.getToken();
   return (
     <main>
       <header>
         <div className="quarter">
-          <img src="/src/assets/Only_tasks.png" alt="logo" class="logo" />
+          <img src={Logo} alt="logo" class="logo" />
         </div>
         <div className="filler"></div>
       </header>
