@@ -45,80 +45,84 @@ const Login = () => {
 
   return (
     <div>
-    <main>
-      <Box
-        component="form"
-        width={450}
-        sx={{
-          "& .MuiTextField-root": { m: 3 },
-        }}
-        multiline
-        display="flex"
-        flexDirection="column"
-        backgroundColor="#ededed"
-        borderRadius={5}
-        maxRows={3}
-        noValidate
-        autoComplete="off"
-        style={{ marginLeft: "35px" }}
-        onSubmit={handleFormSubmit}
-      >
-        <h2
-          style={{
-            color: "black",
-            marginBottom: "5px",
-            padding: "0px",
-            textAlign: "center",
+      <main>
+        <Box
+          component="form"
+          width={450}
+          sx={{
+            "& .MuiTextField-root": { m: 3 },
           }}
+          multiline
+          display="flex"
+          flexDirection="column"
+          backgroundColor="#ededed"
+          borderRadius={5}
+          maxRows={3}
+          noValidate
+          autoComplete="off"
+          style={{ marginLeft: "35px" }}
+          onSubmit={handleFormSubmit}
         >
-          Login
-        </h2>
-        <div>
-          <TextField
-            id="outlined-multiline-required"
-            label="Email"
-            multiline
-            maxRows={3}
-            name="email"
-            style={{ width: "350px", marginLeft: "50px", marginBottom: "10px" }}
-            value={formState.email}
-            onChange={handleChange}
-          />
-        </div>
-        <div>
-          <TextField
-            id="outlined-multiline-required"
-            label="Password"
-            multiline
-            maxRows={3}
+          <h2
             style={{
-              width: "350px",
-              marginLeft: "50px",
-              marginBottom: "15px",
-              marginTop: "10px",
-            }}
-            name="password"
-            value={formState.password}
-            onChange={handleChange}
-          />
-        </div>
-        <div>
-          <Button
-            variant="contained"
-            color="primary"
-            type="submit"
-            style={{
-              width: "150px",
-              marginLeft: "150px",
-              marginTop: "15px",
-              marginBottom: "25px",
+              color: "black",
+              marginBottom: "5px",
+              padding: "0px",
+              textAlign: "center",
             }}
           >
             Login
-          </Button>
-        </div>
-      </Box>
-    </main>
+          </h2>
+          <div>
+            <TextField
+              id="outlined-multiline-required"
+              label="Email"
+              multiline
+              maxRows={3}
+              name="email"
+              style={{
+                width: "350px",
+                marginLeft: "50px",
+                marginBottom: "10px",
+              }}
+              value={formState.email}
+              onChange={handleChange}
+            />
+          </div>
+          <div>
+            <TextField
+              id="outlined-password-input"
+              label="Password"
+              name="password"
+              type="password"
+              maxRows={3}
+              style={{
+                width: "350px",
+                marginLeft: "50px",
+                marginBottom: "15px",
+                marginTop: "10px",
+              }}
+              value={formState.password}
+              onChange={handleChange}
+            />
+          </div>
+          <div>
+            <Button
+              variant="contained"
+              color="primary"
+              type="submit"
+              style={{
+                width: "150px",
+                marginLeft: "150px",
+                marginTop: "15px",
+                marginBottom: "25px",
+              }}
+            >
+              Login
+            </Button>
+          </div>
+        </Box>
+      </main>
     </div>
   );
 };
