@@ -7,6 +7,10 @@
     --color3: #324A5F;
     --color4: #00b2f1;
 }
+html {
+    min-width: 100vw
+}
+
 
 html, body {
     height: 100%;
